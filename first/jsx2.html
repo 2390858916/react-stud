@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/babel">
+        // make data
+        const data = ['react','angular','vue']
+        //make vdom
+        const vdom = (
+            <div>
+                <h1>前端框架</h1> 
+                <ul>
+                    {
+                        data.map((item)=>{
+                            return <li key={item}>{item}</li>
+                        })
+                    }  
+                </ul>   
+            </div>
+        )
+
+        //use vdom
+        ReactDOM.render(vdom,document.getElementById('test'))
+    </script>
+</body>
+</html>
